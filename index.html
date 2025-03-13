@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WOSS Purity Test</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="header">
+    <!-- Either use an image or the text version -->
+    <img src="assets/Purity.png" alt="WOSS Purity Test" />
+    <p class="subtitle">Have you ever...</p>
+  </header>
+
+  <main class="test-container" id="mainContainer">
+
+    <p class="caution" id="cautionMessage">
+      <strong>Caution:</strong> This is not a bucket list. Completion of all items on this test will likely result in academic probation.
+    </p>
+  
+    <form id="purityForm">
+      <!-- Auto-generated questions -->
+    </form>
+  
+    <button type="button" id="calculateBtn">Calculate My Score</button>
+  
+    <section id="resultSection" class="result hidden">
+      <h2>Your WOSS Purity Score: <span id="score">0</span></h2>
+      <p id="scoreMessage">Click the button to see your result.</p>
+      <button type="button" id="shareBtn">Share Result</button>
+    </section>
+  
+  </main>
+  
+
+  <script src="script.js"></script>
+</body>
+</html>
