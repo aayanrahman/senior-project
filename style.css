@@ -1,23 +1,127 @@
 body {
-  font-family: "Playfair Display", serif;
   background-color: #FEF9EF;
-  color: #222;
-  line-height: 1.6;
-  padding: 20px;
+  position: relative; /* Needed for pseudo-element positioning */
+}
+
+/* Create a pseudo-element for the background */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('assets/faint_logo.png');
+  background-repeat: repeat;
+  background-size: 200px; /* Increased from 200px for more spacing */
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.3; /* Adjust transparency (0 = fully transparent, 1 = fully opaque) */
+  z-index: -1; /* Send to back */
 }
 
 /* Header styling */
 .header {
   text-align: center;
-  margin-bottom: 40px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  position: relative;
 }
 
-.header img {
-  max-width: 600px;
-  width: 90%;
-  display: block;
-  margin: 0 auto;
+.heading-container {
+  display: inline-block;
+  position: relative;
 }
+
+.official {
+  position: absolute;       /* Higher up */
+  left: -90px;        /* Bring closer to the title */
+  
+  transform: rotate(-20deg); /* Less tilt (was -20deg) */
+  
+  color: #8b0000;      /* Deep red */
+  font-family: "Playfair Display", serif; /* Match heading font */
+  font-weight: 900;    /* Black weight */
+  font-size: 2.8rem;   /* A little bigger */
+  
+  text-decoration: underline;
+  text-underline-offset: 0.25rem; /* Brings underline closer */
+  text-decoration-thickness: 3px; /* Make the underline thicker */
+  
+  letter-spacing: 1px; /* Fine for a stamp feel */
+  
+  text-shadow: 2px 2px 0 #000;  /* Heavier shadow for a stamp effect */
+  
+  z-index: 2;          /* Make sure it's on top */
+}
+
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  font-family: "Playfair Display", serif;
+  color: #222;
+}
+
+/* Container for title and both triple-line groups */
+.title-line-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* Space between title and lines */
+  margin-top: 10px;
+}
+
+/* Triple stacked lines */
+.triple-lines {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px; /* Space between each line */
+}
+
+.triple-lines .line {
+  width: 130px;     /* Adjust width for length of lines */
+  height: 2px;     /* Thickness of each line */
+  background-color: #222; /* Match the color of the text */
+}
+
+/* The main title */
+.title-line-container h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  font-family: "Playfair Display", serif;
+  color: #222;
+  margin: 0;
+}
+
+.description-container {
+  margin-top: 20px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.description-container p {
+  font-family: "Playfair Display", serif;
+  font-size: 1rem;
+  color: #333;
+  text-align: center;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.description-container .description {
+  color: #444;
+  font-style: italic;
+}
+
+.description-container .instruction {
+  color: #222;
+  font-weight: 400;
+}
+
 
 .subtitle {
   margin-top: 1rem;
@@ -25,6 +129,7 @@ body {
   color: #666;
   font-size: 1rem;
 }
+
 
 /* Main container */
 .test-container {
@@ -34,6 +139,10 @@ body {
   padding: 30px;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 253, 245); /* Slight transparency */
+  padding: 30px;
+  border-radius: 8px;
+  margin-bottom: 100px;
 }
 
 .caution {
