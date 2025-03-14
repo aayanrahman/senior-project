@@ -8,63 +8,59 @@
 </head>
 <body>
 
-  <header class="header">
-    <div class="heading-container">
-      <span class="official">The Official</span>
-  
-      <div class="title-line-container">
-        <div class="triple-lines">
-          <div class="line"></div>
-          <div class="line"></div>
-          <div class="line"></div>
+  <!-- Added wrapper div that contains both header and main content -->
+  <div class="content-wrapper">
+    <header class="header">
+      <div class="heading-container">
+        <span class="official">The Official</span>
+    
+        <div class="title-line-container">
+          <div class="triple-lines">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+    
+          <h1>WOSS Purity Test</h1>
+    
+          <div class="triple-lines">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
         </div>
-  
-        <h1>WOSS Purity Test</h1>
-  
-        <div class="triple-lines">
-          <div class="line"></div>
-          <div class="line"></div>
-          <div class="line"></div>
+    
+        <!-- ✅ Add your descriptions below here -->
+        <div class="description-container">
+          <p class="description">
+            The WOSS Purity Test serves as a way for students to bond and track their experiences throughout their time at WOSS. It's a voluntary opportunity for students to reflect on their unique high school journey.
+          </p>
+          <p class="instruction">
+            Click on every item you have done. Your purity score will be calculated at the end.
+          </p>
         </div>
+        <!-- ✅ End of description block -->
       </div>
-  
-      <!-- ✅ Add your descriptions below here -->
-      <div class="description-container">
-        <p class="description">
-          The WOSS Purity Test serves as a way for students to bond and track their experiences throughout their time at WOSS. It's a voluntary opportunity for students to reflect on their unique high school journey.
-        </p>
-        <p class="instruction">
-          Click on every item you have done. Your purity score will be calculated at the end.
-        </p>
-      </div>
-      <!-- ✅ End of description block -->
-  
-    </div>
-  </header>
-  
-  
-
-
-  <main class="test-container" id="mainContainer">
-
-    <p class="caution" id="cautionMessage">
-      <strong>Caution:</strong> This is not a bucket list. Completion of all items on this test will likely result in academic probation.
-    </p>
-  
-    <form id="purityForm">
-      <!-- Auto-generated questions -->
-    </form>
-  
-    <button type="button" id="calculateBtn">Calculate My Score</button>
-  
-    <section id="resultSection" class="result hidden">
-      <h2>Your WOSS Purity Score: <span id="score">0</span></h2>
-      <p id="scoreMessage">Click the button to see your result.</p>
-      <button type="button" id="shareBtn">Share Result</button>
-    </section>
-  
-  </main>
-  
+    </header>
+    
+    <main class="test-container" id="mainContainer">
+      <p class="caution" id="cautionMessage">
+        <strong>Caution:</strong> This is not a bucket list. Completion of all items on this test will likely result in academic probation.
+      </p>
+    
+      <form id="purityForm">
+        <!-- Auto-generated questions -->
+      </form>
+    
+      <button type="button" id="calculateBtn">Calculate My Score</button>
+    
+      <section id="resultSection" class="result hidden">
+        <h2>Your WOSS Purity Score: <span id="score">0</span></h2>
+        <p id="scoreMessage">Click the button to see your result.</p>
+        <button type="button" id="shareBtn">Share Result</button>
+      </section>
+    </main>
+  </div>
 
   <script src="script.js"></script>
 </body>

@@ -1,94 +1,68 @@
 body {
   background-color: #FEF9EF;
   position: relative; /* Needed for pseudo-element positioning */
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
 }
 
 /* Create a pseudo-element for the background */
 body::before {
   content: '';
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background-image: url('assets/faint_logo.png');
   background-repeat: repeat;
-  background-size: 200px; /* Increased from 200px for more spacing */
+  background-size: 200px;
   background-position: center;
-  background-attachment: fixed;
-  opacity: 0.3; /* Adjust transparency (0 = fully transparent, 1 = fully opaque) */
-  z-index: -1; /* Send to back */
+  opacity: 0.3;
+  z-index: -1;
 }
 
-/* Header styling */
+/* New wrapper container that holds both header and test container */
+.content-wrapper {
+  max-width: 800px;
+  margin: 0 auto 100px;
+  background-color: hsla(44, 87%, 94%);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Ensures the border-radius applies to child elements */
+}
+
+/* Header styling - matched to container width */
 .header {
   text-align: center;
-  margin-top: 40px;
-  margin-bottom: 20px;
+  padding: 40px 20px 20px;
+  border-bottom: 1px solid #e0e0e0;
   position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  /* background-color: hsla(44, 87%, 96%);*/ /* Slightly lighter than test container */
 }
 
-.heading-container {
-  display: inline-block;
-  position: relative;
-}
-
+/* Official stamp styling */
 .official {
-  position: absolute;       /* Higher up */
-  left: -90px;        /* Bring closer to the title */
-  
-  transform: rotate(-20deg); /* Less tilt (was -20deg) */
-  
-  color: #8b0000;      /* Deep red */
-  font-family: "Playfair Display", serif; /* Match heading font */
-  font-weight: 900;    /* Black weight */
-  font-size: 2.8rem;   /* A little bigger */
-  
-  text-decoration: underline;
-  text-underline-offset: 0.25rem; /* Brings underline closer */
-  text-decoration-thickness: 3px; /* Make the underline thicker */
-  
-  letter-spacing: 1px; /* Fine for a stamp feel */
-  
-  text-shadow: 2px 2px 0 #000;  /* Heavier shadow for a stamp effect */
-  
-  z-index: 2;          /* Make sure it's on top */
-}
-
-
-h1 {
-  font-size: 3rem;
-  font-weight: 700;
+  position: absolute;
+  top: 40px;
+  left: 46%;
+  transform: translateX(-150%) rotate(-20deg);
+  color: #8b0000;
   font-family: "Playfair Display", serif;
-  color: #222;
+  font-weight: 900;
+  font-size: 2.8rem;
+  text-decoration: underline;
+  text-underline-offset: 0.25rem;
+  text-decoration-thickness: 3px;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
+  z-index: 2;
 }
 
-/* Container for title and both triple-line groups */
-.title-line-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px; /* Space between title and lines */
-  margin-top: 10px;
-}
-
-/* Triple stacked lines */
-.triple-lines {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 12px; /* Space between each line */
-}
-
-.triple-lines .line {
-  width: 130px;     /* Adjust width for length of lines */
-  height: 2px;     /* Thickness of each line */
-  background-color: #222; /* Match the color of the text */
-}
-
-/* The main title */
-.title-line-container h1 {
+/* Main title styling */
+h1 {
   font-size: 3rem;
   font-weight: 700;
   font-family: "Playfair Display", serif;
@@ -96,11 +70,35 @@ h1 {
   margin: 0;
 }
 
+/* Container for title and horizontal lines */
+.title-line-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin: 10px auto;
+  max-width: 800px;
+}
+
+/* Horizontal lines */
+.triple-lines {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}
+
+.triple-lines .line {
+  width: 130px;
+  height: 2px;
+  background-color: #222;
+}
+
+/* Description section */
 .description-container {
-  margin-top: 20px;
   max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 20px auto;
+  padding: 0 20px;
 }
 
 .description-container p {
@@ -108,7 +106,7 @@ h1 {
   font-size: 1rem;
   color: #333;
   text-align: center;
-  line-height: 1.5;
+  line-height: 1.6;
   margin-bottom: 1rem;
 }
 
@@ -122,58 +120,57 @@ h1 {
   font-weight: 400;
 }
 
-
-.subtitle {
-  margin-top: 1rem;
-  font-style: italic;
-  color: #666;
-  font-size: 1rem;
-}
-
-
-/* Main container */
+/* Main test container */
 .test-container {
-  max-width: 600px;
-  margin: 0 auto;
-  background-color: #fffdf5;
   padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  background-color: rgba(255, 253, 245); /* Slight transparency */
-  padding: 30px;
-  border-radius: 8px;
-  margin-bottom: 100px;
+  border-radius: 0; /* Removed since it's inside the wrapper */
+  box-shadow: none; /* Removed since the wrapper has the shadow */
 }
 
+/* Caution message */
 .caution {
+  font-family: 'Times New Roman', Times, serif;
   background-color: #fff0cc;
   border-left: 4px solid #ffcc00;
-  padding: 10px;
-  margin-bottom: 20px;
-  font-size: 0.9rem;
+  padding: 15px;
+  margin-bottom: 30px;
+  font-size: 1rem;
+  text-align: center;
 }
 
+/* Question styling */
 .question {
+  font-family: 'Times New Roman', Times, serif;
   display: flex;
-  align-items: center;
-  margin-bottom: 12px;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  padding: 5px 0;
+}
+
+.question input[type="checkbox"] {
+  margin-top: 3px;
+  transform: scale(1.2);
 }
 
 .question label {
   margin-left: 10px;
   font-size: 1rem;
+  line-height: 1.4;
 }
 
+/* Calculate button */
 button#calculateBtn {
+  font-family: 'Times New Roman', Times, serif;
   display: block;
   margin: 30px auto 0;
-  padding: 12px 20px;
+  padding: 12px 25px;
   background-color: #8b0000;
   color: #fff;
   border: none;
   border-radius: 6px;
-  font-size: 1rem;
+  font-size: 1.1rem;
   cursor: pointer;
+  font-weight: bold;
 }
 
 button#calculateBtn:hover {
@@ -184,34 +181,59 @@ button#calculateBtn:hover {
   display: none !important; 
 }
 
-
+/* Results section */
 .result {
-  margin: 80px auto 0;
+  margin: 60px auto 0;
   text-align: center;
+  padding: 20px;
 }
 
 .result h2 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin-bottom: 20px;
+  font-family: "Playfair Display", serif;
 }
 
 .result p {
   font-style: italic;
   color: #555;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
 }
 
 button#shareBtn {
   margin-top: 20px;
   background-color: #8b0000;
   color: #fff;
-  padding: 10px 20px;
+  padding: 10px 25px;
   border: none;
   border-radius: 6px;
-  font-size: 1rem;
+  font-size: 1.1rem;
   cursor: pointer;
+  font-weight: bold;
 }
 
 button#shareBtn:hover {
   background-color: #a60000;
 }
 
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .official {
+    font-size: 2rem;
+    left: 30%;
+  }
+  
+  h1 {
+    font-size: 2.2rem;
+  }
+  
+  .triple-lines .line {
+    width: 80px;
+  }
+  
+  .content-wrapper {
+    margin: 0 10px 50px;
+    border-radius: 8px;
+  }
+}

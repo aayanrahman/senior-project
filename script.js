@@ -117,6 +117,20 @@ document.addEventListener("DOMContentLoaded", () => {
     div.appendChild(checkbox);
     div.appendChild(label);
 
+    // Make the entire question div clickable
+    div.addEventListener("click", (event) => {
+      // Prevent triggering multiple times if clicking directly on checkbox or label
+      if (event.target !== checkbox && event.target !== label) {
+        checkbox.checked = !checkbox.checked;
+      }
+    });
+
+    // Label already has native click functionality, but let's make it explicit
+    label.addEventListener("click", (event) => {
+      event.preventDefault(); // Prevent default label behavior
+      checkbox.checked = !checkbox.checked;
+    });
+
     purityForm.appendChild(div);
   });
 
