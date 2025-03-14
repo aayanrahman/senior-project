@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "Attended culture fest just for the food?",
 
     // 💻 Tech / Cyber Crimes
-    "Played GeoGuessr during class and got caught?",
+    "Played GeoGuessr during class?",
     "Played Minecraft during class?",
     "Played Roblox during class?",
     "Watched Netflix during class?",
@@ -174,14 +174,24 @@ document.addEventListener("DOMContentLoaded", () => {
     const purityScore = 100 - Math.round((checkedCount / total) * 100);
     scoreSpan.textContent = purityScore;
 
-    let message = "";
-    if (purityScore > 80) {
-      message = "You are squeaky clean!";
-    } else if (purityScore > 50) {
-      message = "You've had a balanced high school life.";
-    } else {
-      message = "You've truly lived the WOSS experience!";
-    }
+
+  let message = "";
+
+  if (purityScore >= 90) {
+    message = "Bro… did you even go to White Oaks?";
+  } else if (purityScore >= 80) {
+    message = "You lived clean, but you saw some sh*t. Probably skipped once or twice.";
+  } else if (purityScore >= 60) {
+    message = "A balanced WOSS experience. You’ve caused drama, but admin still doesn’t know you.";
+  } else if (purityScore >= 40) {
+    message = "You’ve definitely been called to the office. They remember your name.";
+  } else if (purityScore >= 20) {
+    message = "You are the reason Mr. Mistry wakes up stressed. Admin probably talks about you in staff meetings.";
+  } else {
+    message = "You're a menace. How have you not been expelled yet?";
+  }
+  
+
 
     scoreMessage.textContent = message;
 
@@ -193,6 +203,28 @@ document.addEventListener("DOMContentLoaded", () => {
     // Show the results section
     resultSection.classList.remove("hidden");
   });
+
+  // Put this at the bottom of your existing script.js code (still inside DOMContentLoaded)
+const shareBtn = document.getElementById("shareBtn");
+
+shareBtn.addEventListener("click", () => {
+  const score = document.getElementById("score").textContent;
+  const msg = document.getElementById("scoreMessage").textContent;
+
+  // Customize your share message and link
+  const shareText = `I scored ${score}% on the WOSS Purity Test! Take the test here: https://senior-project-xi.vercel.app`;
+
+  // Copy to clipboard
+  navigator.clipboard.writeText(shareText)
+    .then(() => {
+      alert("Your result was copied! Paste it anywhere 😈");
+    })
+    .catch(err => {
+      console.error("Failed to copy text: ", err);
+    });
+
+});
+
 });
 
 
