@@ -222,6 +222,8 @@ button#shareBtn:hover {
   .official {
     font-size: 2rem;
     left: 30%;
+    top: 20px; /* Move higher on mobile */
+    transform: translateX(-50%) rotate(-20deg); /* Adjust transform for better positioning */
   }
   
   h1 {
@@ -235,5 +237,105 @@ button#shareBtn:hover {
   .content-wrapper {
     margin: 0 10px 50px;
     border-radius: 8px;
+  }
+  
+  .title-line-container {
+    gap: 10px; /* Reduce gap between elements */
+  }
+  
+  .header {
+    padding: 30px 15px 15px; /* Reduce padding on mobile */
+  }
+}
+
+/* Additional small screen adjustments */
+@media (max-width: 480px) {
+  .content-wrapper {
+    margin: 0 5px 30px;
+    border-radius: 6px;
+  }
+  
+  .header {
+    padding: 40px 10px 15px; /* More top padding for the official stamp */
+  }
+  
+  .official {
+    font-size: 1.5rem; /* Smaller font size */
+    top: 25px;
+    left: 25%; /* Position better for small screens */
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.15rem;
+  }
+  
+  h1 {
+    font-size: 1.8rem; /* Smaller title */
+  }
+  
+  .triple-lines .line {
+    width: 50px; /* Smaller lines */
+    height: 1px; /* Thinner lines */
+  }
+  
+  .triple-lines {
+    gap: 8px; /* Less gap between lines */
+  }
+  
+  .title-line-container {
+    gap: 8px; /* Less gap between elements */
+    margin: 5px auto;
+  }
+  
+  .description-container {
+    padding: 0 10px;
+    margin: 15px auto;
+  }
+  
+  .description-container p {
+    font-size: 0.9rem; /* Smaller text */
+    margin-bottom: 0.6rem;
+  }
+  
+  /* Adjust test container padding */
+  .test-container {
+    padding: 20px 15px;
+  }
+  
+  /* Adjust button sizes */
+  button#calculateBtn {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+  
+  button#shareBtn {
+    padding: 8px 20px;
+    font-size: 1rem;
+  }
+  
+  /* Make caution message more readable */
+  .caution {
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Portrait iPhone adjustments */
+@media (max-width: 375px) {
+  .official {
+    font-size: 1.3rem; /* Even smaller font size */
+    left: 22%; /* Position better for very small screens */
+  }
+  
+  h1 {
+    font-size: 1.6rem; /* Smaller title */
+  }
+  
+  .triple-lines .line {
+    width: 40px; /* Even smaller lines */
+  }
+  
+  /* Ensure the heading container properly handles the official stamp */
+  .heading-container {
+    padding-top: 15px;
   }
 }
