@@ -1,12 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
   const questions = [
-    
-    // Academics / School Crimes
     "Used ChatGPT to write an assignment?",
     "Got flagged by Turnitin for AI or plagiarism?",
     "Beat an AI accusation from a teacher?",
     "Dropped a course to do OVS?",
-    "Passed English with a +85% without ever reading the book?",
+    "Passed English with a +85% without ever reading the books?",
     "Pulled an all-nighter and still failed?",
     "Wrote your entire essay on the due date?",
     "Crammed for a test during lunch?",
@@ -14,18 +12,16 @@ document.addEventListener("DOMContentLoaded", () => {
     "Passed a test you absolutely should have failed?",
     "Copied someone’s homework five minutes before class?",
     "Faked being sick to get out of a test?",
+    "Took a test drunk or high?",
     "Walked into the wrong classroom and stayed?",
     "Signed up for a club and never showed up?",
     "Skipped class because of an equity forum?",
     "Skipped a class without asking your parents?",
     "Got caught cheating and lied your way out?",
     "Cheated on a quiz and got caught?",
-    "Crashed out during a group project?",
     "Crashed out over the Guidance office?",
     "Wrote an exam drunk or high?",
     "Got caught skipping a class by a teacher?",
-
-    // Social / Club Life
     "Joined WOSS DECA?",
     "Went to Provs for DECA?",
     "Ran for student government?",
@@ -35,29 +31,24 @@ document.addEventListener("DOMContentLoaded", () => {
     "Got club funding stolen by admin?",
     "Are a president of a club no one cares about?",
     "Are in a Google Classroom of a club you never attend?",
+    "Have lied on a university application or resume?",
     "Attended Relay for Life?",
     "Attended the winter concert?",
+    "Attended the athletic banquet?",
     "Senior sunrise?",
     "Went to a club for free food?",
     "Went on a date with someone from WOSS?",
+    "Dated someone at least 2 grades below you?",
+    "Dated someone at least 2 grades above you?",
     "Had your bike stolen?",
-
-    // Tech / Cyber Crimes
-    "Played GeoGuessr during class?",
     "Played Minecraft during class?",
     "Played Roblox during class?",
-    "Watched Netflix during class?",
     "Played Poker in class?",
     "Made a TikTok in the middle of class?",
     "Tried to use a school-issued Chromebook to mine crypto?",
-    "Tried to sell your school Chromebook on Facebook Marketplace?",
-    "Put up ‘School For Sale’ signs and listed WOSS on Facebook Marketplace?",
-
-    // Fights / Violence / Menace Behavior
     "Got attacked by a kid at North?",
     "Got chased by Mr. Mistry?",
     "Threw hands with someone?",
-    "Started throwing hands with someone?",
     "Started a fake rumor for fun?",
     "Thrown a chair in class?",
     "Pulled a fire alarm as a joke?",
@@ -67,32 +58,27 @@ document.addEventListener("DOMContentLoaded", () => {
     "Got threatened to have your AirPods taken away mid-class?",
     "Gotten dress coded?",
     "Got yelled at by the librarian for being too loud?",
-
-    // Sexual Degeneracy
     "Had sex in school?",
     "Made out with someone in a classroom?",
-    "Made out with someone in a stairwell?",
     "Made out behind the portables?",
     "Hooked up with someone at semi?",
     "Got caught hooking up at semi?",
-    "Gave Oral on WOSS Campus?",
-    "Received Oral on WOSS Campus?",
+    "Gave oral on WOSS campus?",
+    "Received oral on WOSS campus?",
+    "Streaked, flashed, or otherwise exposed yourself to someone at WOSS?",
     "Held hands romantically in the hallway?",
     "Had a crush on a teacher?",
     "Jerked off during class?",
-
-    // Substance Abuse / Partying
     "Showed up to school hungover?",
+    "Have used or made a fake ID?",
     "Vaped in class and blew the cloud into your sleeve?",
     "Sold edibles in the school parking lot?",
+    "Snorted or injected drugs at school?",
     "Bought vapes in the school washrooms?",
-    "Raided your parents’ liquor cabinet before a school trip?",
-    "Snuck alcohol into a school dance?",
     "Filled a water bottle up with vodka and shared it among friends?",
     "Vaped in the school bathroom?",
-
-    // Sports / Gym Class
-    "Played a full soccer game in Timbs or Air Force 1s?",
+    "Have been addicted to drugs or alcohol?",
+    "Played a full game in gym class wearing shoes you absolutely shouldn’t play sports in?",
     "Won an intramural game with zero effort?",
     "Lost an intramural game and blamed the ref?",
     "Attempted a PR bench press or squat in the weight room?",
@@ -101,21 +87,19 @@ document.addEventListener("DOMContentLoaded", () => {
     "Skipped class to get bubble tea?",
     "Skipped school to go to the mall?",
     "Snuck out of school early without getting caught?",
-
-    // Random / Chaos / Legend Behavior
     "Snuck an entire pizza into class and acted like nothing was wrong?",
     "Bought ramen from White Store?",
     "Got a whole pizza from Vitos?",
     "Complained to someone else about how bad WOSS is?",
     "Willingly used the school bathrooms and lived to tell the tale?",
     "Take a school bus to school?",
+    "Have sped at least 40km/h over the speed limit?",
     "Had first period or fifth period break (no spares)?",
     "Ate an entire meal during class?",
     "Climbed onto the school roof?",
-    "Ran a money laundering operation through Club fundraisers?",
-    "Started offering guided tours of the school for money during open house night?",
+    "Ran a money laundering operation through club fundraisers?",
     "Wore pajama pants to school on a non-spirit day?",
-    "Seen or read pornographic material in school?",
+    "Seen or read pornographic material in school?"
   ];
 
   const purityForm = document.getElementById("purityForm");
