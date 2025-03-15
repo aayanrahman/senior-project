@@ -195,7 +195,7 @@ shareBtn.addEventListener("click", () => {
   const msg = document.getElementById("scoreMessage").textContent;
 
   // Customize your share message and link
-  const shareText = `I scored ${score}% on the WOSS Purity Test! Take the test here: https://senior-project-xi.vercel.app`;
+  const shareText = `I scored ${score}% on the WOSS Purity Test! Take the test here: https://wosspuritytest.vercel.app/`;
 
   // Copy to clipboard
   navigator.clipboard.writeText(shareText)
