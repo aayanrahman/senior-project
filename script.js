@@ -166,9 +166,9 @@ document.addEventListener("DOMContentLoaded", () => {
     } else if (purityScore >= 80) {                 // 80 - 89
       message = "You lived clean, but you saw some sh*t. Probably skipped once or twice.";
     } else if (purityScore >= 60) {                 // 60 - 79
-      message = "A balanced WOSS experience. You’ve caused drama, but admin still doesn’t know you.";
+      message = "A balanced WOSS experience. You've caused drama, but admin still doesn't know you.";
     } else if (purityScore >= 40) {                 // 40 - 59
-      message = "You’ve definitely been called to the office. They remember your name.";
+      message = "You've definitely been called to the office. They remember your name.";
     } else if (purityScore >= 20) {                 // 20 - 39
       message = "You are the reason Mr. Mistry wakes up stressed. Admin probably talks about you in staff meetings.";
     } else {                                        // 0 - 19
@@ -185,27 +185,49 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Show the results section
     resultSection.classList.remove("hidden");
+
+    // Send score to Google Sheet
+    sendToGoogleSheet(purityScore);
   });
 
-  // Put this at the bottom of your existing script.js code (still inside DOMContentLoaded)
-const shareBtn = document.getElementById("shareBtn");
-
-shareBtn.addEventListener("click", () => {
-  const score = document.getElementById("score").textContent;
-  const msg = document.getElementById("scoreMessage").textContent;
-
-  // Customize your share message and link
-  const shareText = `I scored ${score}% on the WOSS Purity Test! Take the test here: https://wosspuritytest.vercel.app/`;
-
-  // Copy to clipboard
-  navigator.clipboard.writeText(shareText)
+  // Function to send score data to Google Sheets
+  function sendToGoogleSheet(score) {
+    fetch('https://script.google.com/macros/s/AKfycby2PrnJ4CYOHZi9_U2Bc_zQjVg52AMz1mxuIkYTQzfraIKn9UdSKq7Ko5i4KPzx8rIv/exec', {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        score: score
+      })
+    })
     .then(() => {
-      alert("Your result was copied! Paste it anywhere you like.");
+      console.log(" Score successfully sent to Google Sheet!");
     })
     .catch(err => {
-      console.error("Failed to copy text: ", err);
+      console.error(" Error sending score:", err);
     });
+  }
 
-});
+  // Share button functionality
+  const shareBtn = document.getElementById("shareBtn");
+
+  shareBtn.addEventListener("click", () => {
+    const score = document.getElementById("score").textContent;
+    const msg = document.getElementById("scoreMessage").textContent;
+
+    // Customize your share message and link
+    const shareText = `I scored ${score}% on the WOSS Purity Test! Take the test here: https://wosspuritytest.vercel.app/`;
+
+    // Copy to clipboard
+    navigator.clipboard.writeText(shareText)
+      .then(() => {
+        alert("Your result was copied! Paste it anywhere you like.");
+      })
+      .catch(err => {
+        console.error("Failed to copy text: ", err);
+      });
+  });
 
 });
