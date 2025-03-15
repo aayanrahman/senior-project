@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const questions = [
     
-    // 🔥 Academics / School Crimes
+    // Academics / School Crimes
     "Used ChatGPT to write an assignment?",
     "Got flagged by Turnitin for AI or plagiarism?",
     "Beat an AI accusation from a teacher?",
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "Wrote an exam drunk or high?",
     "Got caught skipping a class by a teacher?",
 
-    // 🎉 Social / Club Life
+    // Social / Club Life
     "Joined WOSS DECA?",
     "Went to Provs for DECA?",
     "Ran for student government?",
@@ -40,9 +40,9 @@ document.addEventListener("DOMContentLoaded", () => {
     "Senior sunrise?",
     "Went to a club for free food?",
     "Went on a date with someone from WOSS?",
-    "Attended culture fest just for the food?",
+    "Had your bike stolen?",
 
-    // 💻 Tech / Cyber Crimes
+    // Tech / Cyber Crimes
     "Played GeoGuessr during class?",
     "Played Minecraft during class?",
     "Played Roblox during class?",
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "Tried to sell your school Chromebook on Facebook Marketplace?",
     "Put up ‘School For Sale’ signs and listed WOSS on Facebook Marketplace?",
 
-    // ⚔️ Fights / Violence / Menace Behavior
+    // Fights / Violence / Menace Behavior
     "Got attacked by a kid at North?",
     "Got chased by Mr. Mistry?",
     "Threw hands with someone?",
@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "Gotten dress coded?",
     "Got yelled at by the librarian for being too loud?",
 
-    // 🍑 Sexual Degeneracy
+    // Sexual Degeneracy
     "Had sex in school?",
     "Made out with someone in a classroom?",
     "Made out with someone in a stairwell?",
@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "Had a crush on a teacher?",
     "Jerked off during class?",
 
-    // 🍻 Substance Abuse / Partying
+    // Substance Abuse / Partying
     "Showed up to school hungover?",
     "Vaped in class and blew the cloud into your sleeve?",
     "Sold edibles in the school parking lot?",
@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "Filled a water bottle up with vodka and shared it among friends?",
     "Vaped in the school bathroom?",
 
-    // 🏀 Sports / Gym Class
+    // Sports / Gym Class
     "Played a full soccer game in Timbs or Air Force 1s?",
     "Won an intramural game with zero effort?",
     "Lost an intramural game and blamed the ref?",
@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "Skipped school to go to the mall?",
     "Snuck out of school early without getting caught?",
 
-    // 🤪 Random / Chaos / Legend Behavior
+    // Random / Chaos / Legend Behavior
     "Snuck an entire pizza into class and acted like nothing was wrong?",
     "Bought ramen from White Store?",
     "Got a whole pizza from Vitos?",
@@ -175,24 +175,23 @@ document.addEventListener("DOMContentLoaded", () => {
     scoreSpan.textContent = purityScore;
 
 
-  let message = "";
+    let message = "";
 
-  if (purityScore >= 90) {
-    message = "Bro… did you even go to White Oaks?";
-  } else if (purityScore >= 80) {
-    message = "You lived clean, but you saw some sh*t. Probably skipped once or twice.";
-  } else if (purityScore >= 60) {
-    message = "A balanced WOSS experience. You’ve caused drama, but admin still doesn’t know you.";
-  } else if (purityScore >= 40) {
-    message = "You’ve definitely been called to the office. They remember your name.";
-  } else if (purityScore >= 20) {
-    message = "You are the reason Mr. Mistry wakes up stressed. Admin probably talks about you in staff meetings.";
-  } else {
-    message = "You're a menace. How have you not been expelled yet?";
-  }
+    if (purityScore >= 90) {                        // 90 - 100
+      message = "Bro… did you even go to White Oaks?";
+    } else if (purityScore >= 80) {                 // 80 - 89
+      message = "You lived clean, but you saw some sh*t. Probably skipped once or twice.";
+    } else if (purityScore >= 60) {                 // 60 - 79
+      message = "A balanced WOSS experience. You’ve caused drama, but admin still doesn’t know you.";
+    } else if (purityScore >= 40) {                 // 40 - 59
+      message = "You’ve definitely been called to the office. They remember your name.";
+    } else if (purityScore >= 20) {                 // 20 - 39
+      message = "You are the reason Mr. Mistry wakes up stressed. Admin probably talks about you in staff meetings.";
+    } else {                                        // 0 - 19
+      message = "You're a menace. How have you not been expelled yet?";
+    }
+
   
-
-
     scoreMessage.textContent = message;
 
     // Hide the quiz section
@@ -217,7 +216,7 @@ shareBtn.addEventListener("click", () => {
   // Copy to clipboard
   navigator.clipboard.writeText(shareText)
     .then(() => {
-      alert("Your result was copied! Paste it anywhere 😈");
+      alert("Your result was copied! Paste it anywhere you like.");
     })
     .catch(err => {
       console.error("Failed to copy text: ", err);
@@ -226,6 +225,3 @@ shareBtn.addEventListener("click", () => {
 });
 
 });
-
-
-// TO DO: make the share button do something 
