@@ -1,4 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Add basic protection against inspect element
+  document.addEventListener('contextmenu', event => event.preventDefault());
+  
+  document.addEventListener('keydown', function(e) {
+    // Prevent F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+    if (
+      e.key === 'F12' || 
+      (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'J' || e.key === 'j')) || 
+      (e.ctrlKey && (e.key === 'U' || e.key === 'u'))
+    ) {
+      e.preventDefault();
+    }
+  });
+
   const questions = [
     "Used ChatGPT to write an assignment?",
     "Got flagged by Turnitin for AI or plagiarism?",
@@ -192,7 +206,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Function to send score data to Google Sheets
   function sendToGoogleSheet(score) {
-    fetch('https://script.google.com/macros/s/AKfycby2PrnJ4CYOHZi9_U2Bc_zQjVg52AMz1mxuIkYTQzfraIKn9UdSKq7Ko5i4KPzx8rIv/exec', {
+    fetch('https://script.google.com/macros/s/AKfycbyZaUOCEEmaDs0HEdu_LgvoMVh-IC1B_g0o4L3M_JXohc_wXnwPG80xIyS-u7v0xVQB/exec', {
       method: 'POST',
       mode: 'no-cors',
       headers: {
